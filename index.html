@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cribbage Website</title>
+    <style>
+
+        /* Update the appearance of the select elements */
+        select {
+            
+            padding: 6px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            outline: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 80px;
+        }
+
+        /* Style the drop-down arrow to make it more visible */
+        select::-ms-expand {
+            display: none;
+        }
+
+        select option {
+         padding: 8px;
+        }
+
+        /* Style the hover and focus states */
+        select:hover,
+        select:focus {
+            border-color: #3498db; /* Change color on hover and focus */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .headerOne {
+            
+            font-size: 18px;
+            
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F0F2F5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .card-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            margin-left: 2%; /* Adjust this percentage based on your design */
+        }
+
+
+        .card-section label,
+        .card-section select {
+            margin: 5px;
+        }
+
+        button {
+            margin: 0;
+            padding: 0;
+            border: none;
+            background: none;
+            font-family: inherit;
+            cursor: pointer;
+            outline: none;
+            
+        }
+
+        .button-container {
+            width: 80%; /* Adjust this percentage based on your design */
+            max-width: 400px; /* Set a maximum width if needed */
+            display: flex;
+            flex-direction: row;
+            gap: 7px;
+            margin-top: -26%; /* Adjust this percentage based on your design */
+            margin-left: 72%; /* Adjust this percentage based on your design */
+            transform: translateX(-50%); /* Center the container horizontally */
+        }
+
+
+        .button.active {
+            background-color:#3498db; 
+        }
+
+
+        .button {
+            padding: 5px 10px; 
+            font-size: 14px; 
+            background-color: #073b5c; 
+            color: #fff;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #2980b9;
+        }
+
+        #cardImage,
+        #newCardImage {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 5px;
+            flex-direction: column; 
+        }
+
+        .card-word-container {
+            margin-top: -45%; /* Adjust this percentage based on your design */
+            margin-left: 66%; /* Adjust this percentage based on your design */
+            transform: translate(-50%, 0); /* Center the container horizontally */
+            font-size: 2vw; /* Adjust font size based on the viewport width */
+        }
+
+
+
+        .new-card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; 
+        margin-top: -20%; /* Adjust this percentage based on your design */
+        margin-left: 58%; /* Adjust this percentage based on your design */
+        transform: translate(-50%, 0); /* Center the container horizontally */
+    }
+
+
+        .new-card-word-container {
+            margin-top: -20%; /* Adjust this percentage based on your design */
+            margin-left: 50%; /* Adjust this percentage based on your design */
+            font-size: 2vw; /* Adjust font size based on the viewport width */
+            text-align: center;
+        }
+
+
+        .card-image {
+            max-width: 100px;
+            height: auto;
+            margin: 10px;
+        }
+
+        .new-card-image {
+                max-width: 100px; /* Adjust the maximum width as per your preference */
+                height: auto; /* Automatically adjust the height to maintain aspect ratio */
+                margin: 10px;
+        }
+
+            
+    </style>
+</head>
+
+<body>
+    <h1>Cribbage Website</h1>
+
+    <div class = "headerOne">
+
+        <div> Select what cards you would like in your hand</div>
+
+    </div>
+
+    
+
+    <br>
+
+    <div class="card-section">
+        <div>
+            <label for="cardsOne">Select a card:</label>
+            <select id="cards1" name="cards">
+                <option value="Ace">Ace</option>
+                <option value="Two">Two</option>
+                <option value="Three">Three</option>
+                <option value="Four">Four</option>
+                <option value="Five">Five</option>
+                <option value="Six">Six</option>
+                <option value="Seven">Seven</option>
+                <option value="Eight">Eight</option>
+                <option value="Nine">Nine</option>
+                <option value="Ten">Ten</option>
+                <option value="Jack">Jack</option>
+                <option value="Queen">Queen</option>
+                <option value="King">King</option>
+            </select>
+
+
+            <label for="suits">Select a suit:</label>
+            <select id="suits1" name="suits">
+            <option value="Hearts">Hearts</option>
+            <option value="Diamonds">Diamonds</option>
+            <option value="Spades">Spades</option>
+            <option value="Clubs">Clubs</option>
+            </select>
+
+            <br>
+            <br>
+            <div> Card Two </div>
+            <br>
+
+            <label for="cardsTwo">Select a card:</label>
+            <select id="cards2" name="cardsTwo">
+                <option value="Ace">Ace</option>
+                <option value="Two" selected>Two</option>
+                <option value="Three">Three</option>
+                <option value="Four">Four</option>
+                <option value="Five">Five</option>
+                <option value="Six">Six</option>
+                <option value="Seven">Seven</option>
+                <option value="Eight">Eight</option>
+                <option value="Nine">Nine</option>
+                <option value="Ten">Ten</option>
+                <option value="Jack">Jack</option>
+                <option value="Queen">Queen</option>
+                <option value="King">King</option>
+            </select>
+
+
+            <label for="suitsTwo">Select a suit:</label>
+            <select id="suits2" name="suitsTwo">
+            <option value="Hearts">Hearts</option>
+            <option value="Diamonds">Diamonds</option>
+            <option value="Spades">Spades</option>
+            <option value="Clubs">Clubs</option>
+            </select>
+
+            <br>
+            <br>
+            <div> Card Three </div>
+
+            <br>
+
+            <label for="cardsThree">Select a card:</label>
+            <select id="cards3" name="cardsThree">
+                <option value="Ace">Ace</option>
+                <option value="Two">Two</option>
+                <option value="Three" selected>Three</option>
+                <option value="Four">Four</option>
+                <option value="Five">Five</option>
+                <option value="Six">Six</option>
+                <option value="Seven">Seven</option>
+                <option value="Eight">Eight</option>
+                <option value="Nine">Nine</option>
+                <option value="Ten">Ten</option>
+                <option value="Jack">Jack</option>
+                <option value="Queen">Queen</option>
+                <option value="King">King</option>
+            </select>
+
+
+            <label for="suitsThree">Select a suit:</label>
+            <select id="suits3" name="suitsThree">
+            <option value="Hearts">Hearts</option>
+            <option value="Diamonds">Diamonds</option>
+            <option value="Spades">Spades</option>
+            <option value="Clubs">Clubs</option>
+            </select>
+
+            <br>
+            <br>
+            <div> Card Four </div>
+            <br>
+
+            <label for="cardsFour">Select a card:</label>
+            <select id="cards4" name="cardsFour">
+                <option value="Ace">Ace</option>
+                <option value="Two">Two</option>
+                <option value="Three">Three</option>
+                <option value="Four" selected>Four</option>
+                <option value="Five">Five</option>
+                <option value="Six">Six</option>
+                <option value="Seven">Seven</option>
+                <option value="Eight">Eight</option>
+                <option value="Nine">Nine</option>
+                <option value="Ten">Ten</option>
+                <option value="Jack">Jack</option>
+                <option value="Queen">Queen</option>
+                <option value="King">King</option>
+            </select>
+
+
+            <label for="suitsFour">Select a suit:</label>
+            <select id="suits4" name="suitsFour">
+            <option value="Hearts">Hearts</option>
+            <option value="Diamonds">Diamonds</option>
+            <option value="Spades">Spades</option>
+            <option value="Clubs">Clubs</option>
+            </select>
+
+            <br>
+            <br>
+            <div> Card Five </div>
+            <br>
+
+            <label for="cardsFive">Select a card:</label>
+            <select id="cards5" name="cardsFive">
+                <option value="Ace">Ace</option>
+                <option value="Two">Two</option>
+                <option value="Three">Three</option>
+                <option value="Four">Four</option>
+                <option value="Five" selected>Five</option>
+                <option value="Six">Six</option>
+                <option value="Seven">Seven</option>
+                <option value="Eight">Eight</option>
+                <option value="Nine">Nine</option>
+                <option value="Ten">Ten</option>
+                <option value="Jack">Jack</option>
+                <option value="Queen">Queen</option>
+                <option value="King">King</option>
+            </select>
+
+
+            <label for="suitsFive">Select a suit:</label>
+            <select id="suits5" name="suitsFive">
+            <option value="Hearts">Hearts</option>
+            <option value="Diamonds">Diamonds</option>
+            <option value="Spades">Spades</option>
+            <option value="Clubs">Clubs</option>
+            </select>
+
+            <br>
+            <br>
+            <div> Card Six </div>
+            <br>
+
+            <label for="cardsSix">Select a card:</label>
+            <select id="cards6" name="cardsSix">
+                <option value="Ace">Ace</option>
+                <option value="Two">Two</option>
+                <option value="Three">Three</option>
+                <option value="Four">Four</option>
+                <option value="Five">Five</option>
+                <option value="Six" selected>Six</option> <!-- Default selected option -->
+                <option value="Seven">Seven</option>
+                <option value="Eight">Eight</option>
+                <option value="Nine">Nine</option>
+                <option value="Ten">Ten</option>
+                <option value="Jack">Jack</option>
+                <option value="Queen">Queen</option>
+                <option value="King">King</option>
+            </select>
+
+
+            <label for="suitsSix">Select a suit:</label>
+            <select id="suits6" name="suitsSix">
+            <option value="Hearts" selected>Hearts</option><!-- Default selected option -->
+            <option value="Diamonds">Diamonds</option>
+            <option value="Spades">Spades</option>
+            <option value="Clubs">Clubs</option>
+
+            </select>
+
+    </div>
+
+    <br>
+    <br>
+
+   
+    
+
+    <div class="card-container">
+
+
+        <div id="cardImage"></div>
+
+    </div>
+
+    <div class = "card-word-container">
+
+        <div> Your hand</div>
+
+    </div>
+
+    <div class="button-container">
+
+        <button class="button active" id="your-crib">Your Crib</button>
+        <button class="button" id="not-your-crib">Not Your Crib</button>
+
+    </div>
+
+    <div class = "new-card-word-container">
+
+        <div> Cards you should keep</div>
+
+    </div>
+
+    <div class = "new-card-container">
+
+        <div id="newCardImage"></div>
+    
+    </div>
+
+    
+
+
+    <script src="cribbage7.js"></script>
+</body>
+</html>
